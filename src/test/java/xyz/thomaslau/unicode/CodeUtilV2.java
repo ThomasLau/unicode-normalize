@@ -36,4 +36,12 @@ public class CodeUtilV2 {
     public byte[] byteStrToBytes(String hexString) throws DecoderException {
         return Hex.decodeHex(hexString);
     }
+        public static String strToUTF16BE(String input) {
+        return bytesToUTF16BE(input.getBytes(StandardCharsets.UTF_16BE));
+    }
+    
+    public static String bytesToUTF16BE(byte[] arr) {
+        HashCode hCode = HashCode.fromBytes(arr);
+        return hCode.toString();
+    }
 }
